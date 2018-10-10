@@ -15,7 +15,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity implements tecnologia.OnFragmentInteractionListener, fama.OnFragmentInteractionListener, desporto.OnFragmentInteractionListener ,economia.OnFragmentInteractionListener, politica.OnFragmentInteractionListener, categorias.OnFragmentInteractionListener, internacional.OnFragmentInteractionListener,sociedade.OnFragmentInteractionListener{
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,internacional.OnFragmentInteractionListener, cultura.OnFragmentInteractionListener, tecnologia.OnFragmentInteractionListener, fama.OnFragmentInteractionListener, desporto.OnFragmentInteractionListener ,economia.OnFragmentInteractionListener, politica.OnFragmentInteractionListener, categorias.OnFragmentInteractionListener, sociedade.OnFragmentInteractionListener{
 
 
     private Toolbar toolbar;
@@ -57,9 +68,15 @@ public class MainActivity extends AppCompatActivity implements tecnologia.OnFrag
         tb.addTab(tb.newTab().setText("Desporto"));
         tb.addTab(tb.newTab().setText("Fama"));
         tb.addTab(tb.newTab().setText("tecnologia"));
+        tb.addTab(tb.newTab().setText("Culrura"));
+        tb.addTab(tb.newTab().setText("Curiosidades"));
 
         tb.setTabGravity(TabLayout.GRAVITY_FILL);
         tb.setTabMode(TabLayout.MODE_SCROLLABLE);
+        NavigationView navigationView = findViewById(R.id.viewpager);
+        navigationView.setNavigationItemSelectedListener(this);
+
+
 
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -87,8 +104,19 @@ public class MainActivity extends AppCompatActivity implements tecnologia.OnFrag
         });
     }
 
+    @NonNull
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.nav_internacional:
+                getSupportFragmentManager().beginTransaction().replace(R.id.viewpager,
+                        new internacional()).commit();
 
+        }
 
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
 
 
 

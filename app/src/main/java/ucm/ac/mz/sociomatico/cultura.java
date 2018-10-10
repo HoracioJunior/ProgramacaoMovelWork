@@ -1,7 +1,5 @@
 package ucm.ac.mz.sociomatico;
 
-
-
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,19 +7,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.annotation.Nullable;
-
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link internacional.OnFragmentInteractionListener} interface
+ * {@link cultura.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link internacional#newInstance} factory method to
+ * Use the {@link cultura#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class internacional extends Fragment {
+public class cultura extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -33,7 +29,7 @@ public class internacional extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public internacional() {
+    public cultura() {
         // Required empty public constructor
     }
 
@@ -43,11 +39,11 @@ public class internacional extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment internacional.
+     * @return A new instance of fragment cultura.
      */
     // TODO: Rename and change types and number of parameters
-    public static internacional newInstance(String param1, String param2) {
-        internacional fragment = new internacional();
+    public static cultura newInstance(String param1, String param2) {
+        cultura fragment = new cultura();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,12 +60,12 @@ public class internacional extends Fragment {
         }
     }
 
-   // @Override
-   // public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                           //  Bundle savedInstanceState) {
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       // return inflater.inflate(R.layout.fragment_internacional, container, false);
-    //}
+        return inflater.inflate(R.layout.fragment_cultura, container, false);
+    }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -109,18 +105,4 @@ public class internacional extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
-
-
-
-
-
-
-
-
-        @Nullable
-        @Override
-        public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-            return inflater.inflate(R.layout.fragment_internacional, container, false);
-        }
-    }
-
+}
