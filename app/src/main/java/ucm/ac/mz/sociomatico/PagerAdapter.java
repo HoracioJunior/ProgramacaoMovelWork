@@ -46,6 +46,14 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
                 desporto desp =new  desporto();
                 return desp;
 
+            case 6:
+                fama fam = new fama();
+                return fam;
+
+            case 7:
+                tecnologia tec = new tecnologia();
+                return tec;
+
 
 
 
