@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/nav_item1" android:title="Categorias">
+    <item android:id="@+id/nav_categoria" android:title="Categorias">
         <menu>
             <group android:id="@+id/categorias">
-            <item android:id="@+id/nav_item2" android:title="Internacional"></item>
-            <item android:id="@+id/nav_item3" android:title="Sociedade"></item>
-            <item android:id="@+id/nav_item4" android:title="Politica"></item>
-            <item android:id="@+id/nav_item5" android:title="Economia"></item>
-            <item android:id="@+id/nav_item6" android:title="Desporto"></item>
-            <item android:id="@+id/nav_item7" android:title="Fama"></item>
-            <item android:id="@+id/nav_item8" android:title="Tecnologias"></item>
-            <item android:id="@+id/nav_item9" android:title="Cultura"></item>
-            <item android:id="@+id/nav_item10" android:title="Curiosidades"></item>
+            <item android:id="@+id/nav_internacional" android:title="Internacional"></item>
+            <item android:id="@+id/nav_sociedade" android:title="Sociedade"></item>
+            <item android:id="@+id/nav_politica" android:title="Politica"></item>
+            <item android:id="@+id/nav_economia" android:title="Economia"></item>
+            <item android:id="@+id/nav_desporto" android:title="Desporto"></item>
+            <item android:id="@+id/nav_fama" android:title="Fama"></item>
+            <item android:id="@+id/nav_tecnologias" android:title="Tecnologias"></item>
+            <item android:id="@+id/nav_cultura" android:title="Cultura"></item>
+            <item android:id="@+id/nav_curiosidade" android:title="Curiosidades"></item>
             </group>
         </menu>
     </item>
