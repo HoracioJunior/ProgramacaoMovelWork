@@ -38,6 +38,16 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
                 politica pol = new politica();
                 return pol;
 
+            case 4:
+                economia econ = new economia();
+                return econ;
+
+            case 5:
+                desporto desp =new  desporto();
+                return desp;
+
+
+
 
 
 

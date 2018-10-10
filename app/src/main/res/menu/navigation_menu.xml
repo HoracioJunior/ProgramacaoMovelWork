@@ -2,13 +2,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/nav_item1" android:title="Categorias">
+        <menu>
 
-    </item>
-    <item android:id="@+id/nav_item2" android:title="Internacional">
+            <item android:id="@+id/nav_item2" android:title="Internacional"></item>
+            <item android:id="@+id/nav_item3" android:title="Sociedade"></item>
+            <item android:id="@+id/nav_item4" android:title="Politica"></item>
+            <item android:id="@+id/nav_item5" android:title="Economia"></item>
+            <item android:id="@+id/nav_item6" android:title="Desporto"></item>
+            <item android:id="@+id/nav_item7" android:title="Fama"></item>
+            <item android:id="@+id/nav_item8" android:title="Tecnologias"></item>
+            <item android:id="@+id/nav_item9" android:title="Cultura"></item>
+            <item android:id="@+id/nav_item10" android:title="Curiosidades"></item>
 
+        </menu>
     </item>
-    <item android:id="@+id/nav_item3" android:title="Sociedade">
 
-    </item>
 
 </menu>

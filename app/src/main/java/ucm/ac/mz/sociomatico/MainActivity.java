@@ -12,7 +12,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity implements politica.OnFragmentInteractionListener, categorias.OnFragmentInteractionListener, internacional.OnFragmentInteractionListener,sociedade.OnFragmentInteractionListener{
+public class MainActivity extends AppCompatActivity implements desporto.OnFragmentInteractionListener ,economia.OnFragmentInteractionListener, politica.OnFragmentInteractionListener, categorias.OnFragmentInteractionListener, internacional.OnFragmentInteractionListener,sociedade.OnFragmentInteractionListener{
 
 
     private Toolbar toolbar;
@@ -44,10 +44,13 @@ public class MainActivity extends AppCompatActivity implements politica.OnFragme
 
 
         TabLayout tb = findViewById(R.id.tablayout);
+
         tb.addTab(tb.newTab().setText("Novidades"));
         tb.addTab(tb.newTab().setText("Internacional"));
         tb.addTab(tb.newTab().setText("Sociedade"));
         tb.addTab(tb.newTab().setText("Politica"));
+        //tb.addTab(tb.newTab().setText("Economia"));
+        //tb.addTab(tb.newTab().setText("Desporto"));
 
         tb.setTabGravity(TabLayout.GRAVITY_FILL);
 
