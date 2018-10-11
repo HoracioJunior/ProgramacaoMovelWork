@@ -1,6 +1,5 @@
 package ucm.ac.mz.sociomatico;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.design.widget.TabLayout;
@@ -15,9 +14,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements curiosidades.OnFragmentInteractionListener, cultura.OnFragmentInteractionListener, tecnologia.OnFragmentInteractionListener, fama.OnFragmentInteractionListener, desporto.OnFragmentInteractionListener ,economia.OnFragmentInteractionListener, politica.OnFragmentInteractionListener, categorias.OnFragmentInteractionListener, internacional.OnFragmentInteractionListener,sociedade.OnFragmentInteractionListener{
+public class MainActivity extends AppCompatActivity implements tecnologia.OnFragmentInteractionListener, fama.OnFragmentInteractionListener, desporto.OnFragmentInteractionListener ,economia.OnFragmentInteractionListener, politica.OnFragmentInteractionListener, categorias.OnFragmentInteractionListener, internacional.OnFragmentInteractionListener,sociedade.OnFragmentInteractionListener{
 
 
     private Toolbar toolbar;
@@ -59,12 +57,9 @@ public class MainActivity extends AppCompatActivity implements curiosidades.OnFr
         tb.addTab(tb.newTab().setText("Desporto"));
         tb.addTab(tb.newTab().setText("Fama"));
         tb.addTab(tb.newTab().setText("tecnologia"));
-        tb.addTab(tb.newTab().setText("Cultura"));
-        tb.addTab(tb.newTab().setText("Curiosidades"));
 
         tb.setTabGravity(TabLayout.GRAVITY_FILL);
         tb.setTabMode(TabLayout.MODE_SCROLLABLE);
-
 
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -101,23 +96,12 @@ public class MainActivity extends AppCompatActivity implements curiosidades.OnFr
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        int id = item.getItemId();
-
-        if(id== R.id.nav_item2){
-
-           Intent intent = new Intent(MainActivity.this, fama.class);
-           startActivity(intent);
-        }
-
         if (actionBarDrawerToggle.onOptionsItemSelected(item)){
             return true;
 
 
 
         }
-
-
-
 
 
         return super.onOptionsItemSelected(item);
@@ -127,6 +111,4 @@ public class MainActivity extends AppCompatActivity implements curiosidades.OnFr
     public void onFragmentInteraction(Uri uri) {
 
     }
-
-
 }
