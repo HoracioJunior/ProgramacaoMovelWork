@@ -7,12 +7,15 @@
     android:background="#000000"
     android:minHeight="?attr/actionBarSize"
     android:id="@+id/toolbar"
-    app:theme="@style/ThemeOverlay.AppCompat.Dark">
+    app:theme="@style/ThemeOverlay.AppCompat.Dark"
+    >
 
-    <android.support.v7.widget.AppCompatImageView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:src="@drawable/ic_search"
+        android:layout_marginTop="4dp"
+
+        android:src="@drawable/pesquisar_48"
         android:layout_marginLeft="110dp"
 
         />

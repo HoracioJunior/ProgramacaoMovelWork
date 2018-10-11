@@ -15,7 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity implements tecnologia.OnFragmentInteractionListener, fama.OnFragmentInteractionListener, desporto.OnFragmentInteractionListener ,economia.OnFragmentInteractionListener, politica.OnFragmentInteractionListener, categorias.OnFragmentInteractionListener, internacional.OnFragmentInteractionListener,sociedade.OnFragmentInteractionListener{
+public class MainActivity extends AppCompatActivity implements cultura.OnFragmentInteractionListener, curiosidades.OnFragmentInteractionListener, tecnologia.OnFragmentInteractionListener, fama.OnFragmentInteractionListener, desporto.OnFragmentInteractionListener ,economia.OnFragmentInteractionListener, politica.OnFragmentInteractionListener, categorias.OnFragmentInteractionListener, internacional.OnFragmentInteractionListener,sociedade.OnFragmentInteractionListener{
 
 
     private Toolbar toolbar;
@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements tecnologia.OnFrag
         tb.addTab(tb.newTab().setText("Desporto"));
         tb.addTab(tb.newTab().setText("Fama"));
         tb.addTab(tb.newTab().setText("tecnologia"));
+        tb.addTab(tb.newTab().setText("Cultura"));
+        tb.addTab(tb.newTab().setText("Curiosidades"));
 
         tb.setTabGravity(TabLayout.GRAVITY_FILL);
         tb.setTabMode(TabLayout.MODE_SCROLLABLE);
