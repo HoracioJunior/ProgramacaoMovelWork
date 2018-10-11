@@ -9,6 +9,14 @@
     android:id="@+id/toolbar"
     app:theme="@style/ThemeOverlay.AppCompat.Dark">
 
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_search"
+        android:layout_marginLeft="110dp"
+
+        />
+
 
 </android.support.v7.widget.Toolbar>
 

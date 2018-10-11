@@ -54,6 +54,15 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
                 tecnologia tec = new tecnologia();
                 return tec;
 
+            case 8:
+                cultura cul = new cultura();
+                return cul;
+
+            case 9:
+                curiosidades cur = new curiosidades();
+                return cur;
+
+
 
 
 
