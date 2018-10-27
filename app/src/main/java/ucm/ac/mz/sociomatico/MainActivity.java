@@ -1,7 +1,11 @@
 package ucm.ac.mz.sociomatico;
 
+import android.content.ClipData;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -14,6 +18,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements cultura.OnFragmentInteractionListener, curiosidades.OnFragmentInteractionListener, tecnologia.OnFragmentInteractionListener, fama.OnFragmentInteractionListener, desporto.OnFragmentInteractionListener ,economia.OnFragmentInteractionListener, politica.OnFragmentInteractionListener, categorias.OnFragmentInteractionListener, internacional.OnFragmentInteractionListener,sociedade.OnFragmentInteractionListener{
 
@@ -95,19 +100,31 @@ public class MainActivity extends AppCompatActivity implements cultura.OnFragmen
 
 
 
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         if (actionBarDrawerToggle.onOptionsItemSelected(item)){
-            return true;
+
+
+            Toast.makeText(this,"batata",Toast.LENGTH_LONG).show();
+            return super.onOptionsItemSelected(item);
+
+
 
 
 
         }
 
 
-        return super.onOptionsItemSelected(item);
+        return true;
     }
+
+
+
+
+
 
     @Override
     public void onFragmentInteraction(Uri uri) {
