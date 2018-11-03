@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/nav_item1" android:title="Categorias">
-        <menu>
 
-            <item android:id="@+id/nav_item2" android:title="Internacional" android:icon="@drawable/world48dp"></item>
+
+
+            <item android:onClick="metodo" android:id="@+id/nav_item2" android:title="Internacional" android:icon="@drawable/world48dp"></item>
 
 
             <item android:id="@+id/nav_item3" android:title="Sociedade" android:icon="@drawable/people48dp"></item>
@@ -21,8 +21,7 @@
             <item android:id="@+id/nav_item10" android:title="Curiosidades" android:icon="@drawable/curiosidades_48"></item>
             <item android:id="@+id/nav_item11" android:title="Definicões" android:icon="@drawable/settings_48"></item>
 
-        </menu>
-    </item>
+
 
 
 </menu>

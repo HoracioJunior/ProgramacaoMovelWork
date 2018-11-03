@@ -10,7 +10,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.annotation.Nullable;
+import android.widget.ListView;
+import android.widget.Toast;
 
+import java.util.List;
+
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import ucm.ac.mz.Adapters.Adapter_ListaDeProdutos;
+import ucm.ac.mz.entidades.Post;
+
+import ucm.ac.mz.servicos.APIClient;
+import ucm.ac.mz.servicos.ServicoPost;
 
 
 /**
@@ -55,6 +68,17 @@ public class internacional extends Fragment {
         return fragment;
     }
 
+
+
+
+
+
+
+    private ListView lista_posts;
+    private ServicoPost servicoproduto;
+    private List<Post> posts;
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +86,12 @@ public class internacional extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+
+
+
+
     }
 
    // @Override
@@ -95,6 +125,7 @@ public class internacional extends Fragment {
         mListener = null;
     }
 
+
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -119,7 +150,44 @@ public class internacional extends Fragment {
 
         @Nullable
         @Override
-        public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+
+            lista_posts = (ListView) container.findViewById(R.id.Listview_posts);
+
+
+            servicoproduto = APIClient.getClient().create(ServicoPost.class);
+
+
+             Call call = servicoproduto.getAllPost();
+
+
+             call.enqueue(new Callback() {
+                 @Override
+                 public void onResponse(Call call, Response response) {
+
+
+                     posts = (List<Post>) response.body();
+                     Toast.makeText(container.getContext(),"Falha",Toast.LENGTH_LONG);
+                     lista_posts.setAdapter(new Adapter_ListaDeProdutos(container.getContext(),posts));
+
+
+                 }
+
+                 @Override
+                 public void onFailure(Call call, Throwable t) {
+
+
+                     Toast.makeText(container.getContext(),"Falha",Toast.LENGTH_LONG);
+
+                 }
+             });
+
+
+
+
+
+
             return inflater.inflate(R.layout.fragment_internacional, container, false);
         }
     }

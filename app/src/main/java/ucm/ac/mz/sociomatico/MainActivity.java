@@ -5,8 +5,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.NavigationView.OnNavigationItemSelectedListener;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -20,13 +23,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements cultura.OnFragmentInteractionListener, curiosidades.OnFragmentInteractionListener, tecnologia.OnFragmentInteractionListener, fama.OnFragmentInteractionListener, desporto.OnFragmentInteractionListener ,economia.OnFragmentInteractionListener, politica.OnFragmentInteractionListener, categorias.OnFragmentInteractionListener, internacional.OnFragmentInteractionListener,sociedade.OnFragmentInteractionListener{
+public class MainActivity extends AppCompatActivity implements cultura.OnFragmentInteractionListener, curiosidades.OnFragmentInteractionListener, tecnologia.OnFragmentInteractionListener, fama.OnFragmentInteractionListener, desporto.OnFragmentInteractionListener ,economia.OnFragmentInteractionListener, politica.OnFragmentInteractionListener, categorias.OnFragmentInteractionListener, internacional.OnFragmentInteractionListener,sociedade.OnFragmentInteractionListener {
 
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
-
+    MenuItem item1;
 
 
     @Override
@@ -69,12 +72,15 @@ public class MainActivity extends AppCompatActivity implements cultura.OnFragmen
         tb.setTabMode(TabLayout.MODE_SCROLLABLE);
 
 
-        final ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+       final ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
        final ucm.ac.mz.sociomatico.PagerAdapter adapter = new ucm.ac.mz.sociomatico.PagerAdapter(getSupportFragmentManager(),tb.getTabCount());
 
        viewPager.setAdapter(adapter);
         viewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tb));
+
+
         tb.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
             @Override
             public void onTabSelected(TabLayout.Tab tab){
                 viewPager.setCurrentItem(tab.getPosition());
@@ -98,17 +104,14 @@ public class MainActivity extends AppCompatActivity implements cultura.OnFragmen
 
 
 
-
-
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         if (actionBarDrawerToggle.onOptionsItemSelected(item)){
 
+            item1 = item;
 
-            Toast.makeText(this,"batata",Toast.LENGTH_LONG).show();
+
             return super.onOptionsItemSelected(item);
 
 
@@ -123,7 +126,23 @@ public class MainActivity extends AppCompatActivity implements cultura.OnFragmen
 
 
 
+  public void metodo(MenuItem v){
 
+
+      Toast.makeText(this,"batata",Toast.LENGTH_LONG).show();
+
+
+
+      TabLayout tb = findViewById(R.id.tablayout);
+      final ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+      final ucm.ac.mz.sociomatico.PagerAdapter adapter = new ucm.ac.mz.sociomatico.PagerAdapter(getSupportFragmentManager(),tb.getTabCount());
+
+      viewPager.setAdapter(adapter);
+      viewPager.setCurrentItem(1);
+      onOptionsItemSelected(item1);
+
+
+  }
 
 
     @Override
