@@ -94,21 +94,13 @@ public class MainActivity extends AppCompatActivity implements cultura.OnFragmen
         });
     }
 
-
-
-
-
-
-
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         if (actionBarDrawerToggle.onOptionsItemSelected(item)){
 
 
-            Toast.makeText(this,"batata",Toast.LENGTH_LONG).show();
+
             return super.onOptionsItemSelected(item);
 
 
@@ -123,11 +115,18 @@ public class MainActivity extends AppCompatActivity implements cultura.OnFragmen
 
 
 
-
-
-
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    public void definicoes(MenuItem item) {
+        Intent intent= new Intent(this, Definicoes_Activity.class);
+        startActivity(intent);
+    }
+
+    public void internacional(MenuItem item) {
+        Intent intent= new Intent(this, internacional.class);
+        startActivity(intent);
     }
 }
