@@ -43,7 +43,7 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
                 return econ;
 
             case 5:
-                desporto desp =new  desporto();
+                    desporto desp =new  desporto();
                 return desp;
 
             case 6:
