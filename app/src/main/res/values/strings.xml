@@ -80,4 +80,5 @@
 
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="prefs_web_page">sociomatico</string>
+    <string name="title_activity_teste">Teste</string>
 </resources>

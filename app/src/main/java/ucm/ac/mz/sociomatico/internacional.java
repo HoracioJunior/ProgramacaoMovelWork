@@ -2,28 +2,24 @@ package ucm.ac.mz.sociomatico;
 
 
 
+import android.content.ClipData;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.annotation.Nullable;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
-
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import ucm.ac.mz.Adapters.Adapter_ListaDeProdutos;
-import ucm.ac.mz.entidades.Post;
-
-import ucm.ac.mz.servicos.APIClient;
-import ucm.ac.mz.servicos.ServicoPost;
 
 
 /**
@@ -65,6 +61,11 @@ public class internacional extends Fragment {
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
+
+
+
+
+
         return fragment;
     }
 
@@ -74,9 +75,7 @@ public class internacional extends Fragment {
 
 
 
-    private ListView lista_posts;
-    private ServicoPost servicoproduto;
-    private List<Post> posts;
+
 
 
     @Override
@@ -85,6 +84,13 @@ public class internacional extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
+
+
+
+
+
+
         }
 
 
@@ -94,12 +100,10 @@ public class internacional extends Fragment {
 
     }
 
-   // @Override
-   // public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                           //  Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-       // return inflater.inflate(R.layout.fragment_internacional, container, false);
-    //}
+
+
+
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -139,12 +143,15 @@ public class internacional extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+
+
     }
 
 
 
-
-
+    static  TextView texto;
+    static ListView lv;
+    static  Context cnt ;
 
 
 
@@ -153,42 +160,32 @@ public class internacional extends Fragment {
         public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
 
 
-            lista_posts = (ListView) container.findViewById(R.id.Listview_posts);
+           View view = inflater.inflate(R.layout.fragment_internacional, container,false);
 
 
-            servicoproduto = APIClient.getClient().create(ServicoPost.class);
 
 
-             Call call = servicoproduto.getAllPost();
+            lv = (ListView) view.findViewById(R.id.lista_posts);
+
+            PostAdapter adapter ;
+            ArrayList<Post> listaPost = new  ArrayList<Post>();
+
+            cnt = view.getContext();
 
 
-             call.enqueue(new Callback() {
-                 @Override
-                 public void onResponse(Call call, Response response) {
 
 
-                     posts = (List<Post>) response.body();
-                     Toast.makeText(container.getContext(),"Falha",Toast.LENGTH_LONG);
-                     lista_posts.setAdapter(new Adapter_ListaDeProdutos(container.getContext(),posts));
-
-
-                 }
-
-                 @Override
-                 public void onFailure(Call call, Throwable t) {
-
-
-                     Toast.makeText(container.getContext(),"Falha",Toast.LENGTH_LONG);
-
-                 }
-             });
+            Fetchdata process = new Fetchdata();
+            process.execute();
 
 
 
 
 
 
-            return inflater.inflate(R.layout.fragment_internacional, container, false);
+
+
+            return view;
         }
     }
 

@@ -10,7 +10,15 @@
 
 
     <ListView
-        android:id="@+id/..."
+        android:id="@+id/lista_posts"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        tools:listitem="@layout/post_layout">
+
+
+    </ListView>
+
 </RelativeLayout>
