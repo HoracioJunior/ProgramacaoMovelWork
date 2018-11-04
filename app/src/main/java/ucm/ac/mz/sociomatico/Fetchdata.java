@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ucm.ac.mz.sociomatico.internacional;
-import retrofit2.http.Url;
+
 
 public class Fetchdata extends AsyncTask<Void,Void,Void> {
 
