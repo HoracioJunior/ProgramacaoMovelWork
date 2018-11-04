@@ -85,7 +85,7 @@ public class Fetchdata extends AsyncTask<Void,Void,Void> {
 
 
 
-                Log.println(Log.ERROR,"Atencao",(""+link_imagem));
+                Log.println(Log.ERROR,"Atencao",(" "+link_imagem));
                 Log.println(Log.ERROR,"Atencao",(""+ja.length()));
                 Log.println(Log.ERROR,"Atencao",(""+i));
                 Log.println(Log.ERROR,"Atencao",(""+post.titulo));
