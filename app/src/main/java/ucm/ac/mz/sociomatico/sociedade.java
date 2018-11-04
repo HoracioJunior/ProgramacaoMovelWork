@@ -90,7 +90,7 @@ public class sociedade extends Fragment {
 
 
 
-        Fetchdata process = new Fetchdata("http://www.sociomatico.com/wp-json/wp/v2/categories/7",2);
+        Fetchdata process = new Fetchdata("http://www.sociomatico.com/wp-json/wp/v2/posts?categories=7",2);
         process.execute();
 
 
