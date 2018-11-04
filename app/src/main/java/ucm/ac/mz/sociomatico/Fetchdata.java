@@ -27,11 +27,24 @@ public class Fetchdata extends AsyncTask<Void,Void,Void> {
 
 
     String data="";
-    String data1="";
+
     String link_imagem="http://www.sociomatico.com/wp-json/wp/v2/media/";
     String singleParsed="";
     Post post ;
     ArrayList<Post> items = new ArrayList<>();
+    String link_pub;
+    int classe;
+
+
+    public Fetchdata(String url, int classe){
+
+
+        link_pub = url;
+        this.classe = classe;
+
+
+
+    }
 
 
 
@@ -43,7 +56,7 @@ public class Fetchdata extends AsyncTask<Void,Void,Void> {
         try {
 
 
-            URL url =new URL("http://www.sociomatico.com/wp-json/wp/v2/posts?categories=1062");
+            URL url =new URL(link_pub);
             HttpURLConnection httpconnection = (HttpURLConnection) url.openConnection();
 
             InputStream inputStream = httpconnection.getInputStream();
@@ -65,9 +78,11 @@ public class Fetchdata extends AsyncTask<Void,Void,Void> {
 
             for(int i=0;i<ja.length();i++){
 
+                post = null;
                 post = new Post();
                 JSONObject obj  = (JSONObject) ja.get(i);
 
+                link_imagem=null;
                 link_imagem = "http://www.sociomatico.com/wp-json/wp/v2/media/"+obj.get("featured_media");
 
                 JSONObject nobj = (JSONObject) obj.get("title");
@@ -80,22 +95,24 @@ public class Fetchdata extends AsyncTask<Void,Void,Void> {
 
                // dataParsed = dataParsed+singleParsed+"";
 
-                Log.println(Log.ERROR,"Atencao",(""+link_imagem));
-
-
-                post = getImage(post,link_imagem);
 
 
 
 
-                Log.println(Log.ERROR,"Atencao",(""+ja.length()));
-                Log.println(Log.ERROR,"Atencao",(""+i));
-                Log.println(Log.ERROR,"Atencao",(""+post.titulo));
-                Log.println(Log.ERROR,"Atencao",(""+post.imagem));
+                this.post.imagem = getImage(link_imagem);
+                Log.println(Log.ERROR,"Atencao a isso jovem",getImage(link_imagem));
+
+
+
+                //Log.println(Log.ERROR,"Atencao",(""+ja.length()));
+                //Log.println(Log.ERROR,"Atencao",(""+i));
+                //Log.println(Log.ERROR,"Atencao",(""+post.titulo));
+                //Log.println(Log.ERROR,"Atencao",(""+post.imagem));
 
 
 
                 items.add(post);
+
             }
 
 
@@ -115,12 +132,12 @@ public class Fetchdata extends AsyncTask<Void,Void,Void> {
 
 
 
-    Post getImage(Post post,String link_imagem){
+    String getImage(String link_imagem){
 
 
         try {
 
-            Log.println(Log.ERROR,"SOZINHO",(""+link_imagem));
+
             URL url1 =new URL(link_imagem);
 
 
@@ -135,7 +152,7 @@ public class Fetchdata extends AsyncTask<Void,Void,Void> {
             BufferedReader bufferedReader1 = null;
             bufferedReader1 = new BufferedReader(new InputStreamReader(inputStream1));
             String line1 = "";
-
+            String data1="";
 
             while (line1 != null){
 
@@ -146,9 +163,13 @@ public class Fetchdata extends AsyncTask<Void,Void,Void> {
             }
 
 
-            JSONObject ja1 = new JSONObject(data1);
 
-            post.imagem = ""+ja1.get("source_url");
+            JSONObject ja1 = new JSONObject(data1);
+            Log.println(Log.ERROR,"SOZINHO",(""+ja1.toString()));
+
+            httpconnection1.disconnect();
+
+            return ""+ja1.get("source_url");
 
 
 
@@ -164,8 +185,7 @@ public class Fetchdata extends AsyncTask<Void,Void,Void> {
 
 
 
-        return post;
-
+        return "";
 
     }
 
@@ -173,9 +193,47 @@ public class Fetchdata extends AsyncTask<Void,Void,Void> {
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
 
-
         PostAdapter pst = new PostAdapter(internacional.cnt,R.layout.post_layout,items);
-        internacional.lv.setAdapter(pst);
+
+        switch (classe){
+
+            case 0:
+
+          categorias.lv.setAdapter(pst);
+
+
+            break;
+
+            case 1:
+
+
+
+          internacional.lv.setAdapter(pst);
+
+          break;
+
+
+
+            case 2:
+
+
+
+          sociedade.lv.setAdapter(pst);
+
+          break;
+
+
+
+
+        }
+
+
+
+
+
+
+
+
 
 
 

@@ -179,7 +179,7 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="200dp"
-            android:background="#242628">
+            android:background="#0d1116">
 
             <android.support.v7.widget.AppCompatImageView
                 android:layout_width="match_parent"

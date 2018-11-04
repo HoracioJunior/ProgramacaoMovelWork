@@ -3,10 +3,15 @@ package ucm.ac.mz.sociomatico;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 
 /**
@@ -60,11 +65,42 @@ public class categorias extends Fragment {
         }
     }
 
+
+    static ListView lv;
+    static  Context cnt ;
+
+
+
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_categorias, container, false);
+    public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+
+        View view = inflater.inflate(R.layout.fragment_categorias, container,false);
+
+
+
+
+        lv = (ListView) view.findViewById(R.id.lista_posts1);
+
+        PostAdapter adapter ;
+        ArrayList<Post> listaPost = new  ArrayList<Post>();
+
+        cnt = view.getContext();
+
+
+
+
+        Fetchdata process = new Fetchdata("http://www.sociomatico.com/wp-json/wp/v2/posts",0);
+        process.execute();
+
+
+
+
+
+
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

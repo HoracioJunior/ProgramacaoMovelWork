@@ -149,7 +149,7 @@ public class internacional extends Fragment {
 
 
 
-    static  TextView texto;
+
     static ListView lv;
     static  Context cnt ;
 
@@ -175,7 +175,7 @@ public class internacional extends Fragment {
 
 
 
-            Fetchdata process = new Fetchdata();
+            Fetchdata process = new Fetchdata("http://www.sociomatico.com/wp-json/wp/v2/posts?categories=1062",1);
             process.execute();
 
 

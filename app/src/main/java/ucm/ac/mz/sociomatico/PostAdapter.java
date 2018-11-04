@@ -84,7 +84,10 @@ public class PostAdapter extends BaseAdapter {
         holder.titulo_pub.setText(itemList.get(position).getTitulo());
         new BaixarImagem(holder.imagem).execute(itemList.get(position).imagem);
 
+        Log.println(Log.ERROR,"AtencaoBatata1",itemList.get(position).imagem);
+
         return convertView;
+
     }
 
 

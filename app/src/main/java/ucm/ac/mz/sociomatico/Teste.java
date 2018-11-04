@@ -32,8 +32,8 @@ public class Teste extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-              Fetchdata process = new Fetchdata();
-              process.execute();
+             // Fetchdata process = new Fetchdata();
+             // process.execute();
 
             }
         });
