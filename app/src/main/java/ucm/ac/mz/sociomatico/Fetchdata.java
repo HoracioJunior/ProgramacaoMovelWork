@@ -223,6 +223,70 @@ public class Fetchdata extends AsyncTask<Void,Void,Void> {
           break;
 
 
+            case 3:
+
+
+
+                politica.lv.setAdapter(pst);
+
+                break;
+
+
+            case 4:
+
+
+
+                economia.lv.setAdapter(pst);
+
+                break;
+
+
+
+
+            case 5:
+
+
+
+                desporto.lv.setAdapter(pst);
+
+                break;
+
+
+            case 6:
+
+
+
+                fama.lv.setAdapter(pst);
+
+                break;
+
+
+            case 7:
+
+
+
+                tecnologia.lv.setAdapter(pst);
+
+                break;
+
+
+            case 8:
+
+
+
+                cultura.lv.setAdapter(pst);
+
+                break;
+
+
+
+            case 9:
+
+
+
+               curiosidades.lv.setAdapter(pst);
+
+                break;
 
 
         }
