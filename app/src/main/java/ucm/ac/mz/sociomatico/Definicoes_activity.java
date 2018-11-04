@@ -33,7 +33,7 @@ import java.util.List;
  * href="http://developer.android.com/guide/topics/ui/settings.html">Settings
  * API Guide</a> for more information on developing a Settings UI.
  */
-public class Definicoes_Activity extends AppCompatPreferenceActivity {
+public class Definicoes_activity extends AppCompatPreferenceActivity {
 
     /**
      * A preference value change listener that updates the preference's summary
@@ -198,7 +198,7 @@ public class Definicoes_Activity extends AppCompatPreferenceActivity {
         public boolean onOptionsItemSelected(MenuItem item) {
             int id = item.getItemId();
             if (id == android.R.id.home) {
-                startActivity(new Intent(getActivity(), Definicoes_Activity.class));
+                startActivity(new Intent(getActivity(), Definicoes_activity.class));
                 return true;
             }
             return super.onOptionsItemSelected(item);
@@ -228,7 +228,7 @@ public class Definicoes_Activity extends AppCompatPreferenceActivity {
         public boolean onOptionsItemSelected(MenuItem item) {
             int id = item.getItemId();
             if (id == android.R.id.home) {
-                startActivity(new Intent(getActivity(), Definicoes_Activity.class));
+                startActivity(new Intent(getActivity(), Definicoes_activity.class));
                 return true;
             }
             return super.onOptionsItemSelected(item);
@@ -258,7 +258,7 @@ public class Definicoes_Activity extends AppCompatPreferenceActivity {
         public boolean onOptionsItemSelected(MenuItem item) {
             int id = item.getItemId();
             if (id == android.R.id.home) {
-                startActivity(new Intent(getActivity(), Definicoes_Activity.class));
+                startActivity(new Intent(getActivity(), Definicoes_activity.class));
                 return true;
             }
             return super.onOptionsItemSelected(item);
