@@ -56,5 +56,4 @@
         app:theme="@style/ThemeOverlay.AppCompat.Dark"
         >
     </android.support.design.widget.NavigationView>
-
 </android.support.v4.widget.DrawerLayout>
