@@ -89,7 +89,7 @@ public class fama extends Fragment {
 
 
 
-        Fetchdata process = new Fetchdata("http://www.sociomatico.com/wp-json/wp/v2/posts?categories=227",5);
+        Fetchdata process = new Fetchdata("http://www.sociomatico.com/wp-json/wp/v2/posts?categories=227",6);
         process.execute();
 
 

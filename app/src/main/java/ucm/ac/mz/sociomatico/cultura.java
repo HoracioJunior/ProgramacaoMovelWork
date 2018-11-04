@@ -89,7 +89,7 @@ public class cultura extends Fragment {
 
 
 
-        Fetchdata process = new Fetchdata("http://www.sociomatico.com/wp-json/wp/v2/posts?categories=148",8);
+        Fetchdata process = new Fetchdata("http://www.sociomatico.com/wp-json/wp/v2/posts?categories=1186",8);
         process.execute();
 
 
