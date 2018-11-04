@@ -81,43 +81,18 @@ public class Fetchdata extends AsyncTask<Void,Void,Void> {
                // dataParsed = dataParsed+singleParsed+"";
 
 
-
-                URL url1 =new URL(link_imagem);
-                HttpURLConnection httpconnection1 = (HttpURLConnection) url1.openConnection();
-
-                InputStream inputStream1 = httpconnection1.getInputStream();
-
-                BufferedReader bufferedReader1 = new BufferedReader(new InputStreamReader(inputStream1));
-                String line1 = "";
-
-
-                while (line1 != null){
-
-
-                    line1 = bufferedReader1.readLine();
-                    data1 = data1 +line1;
-
-                }
-
-                JSONObject ja1 = new JSONObject(data1);
-
-
-                for(int j=0;j<1;j++){
+                post = getImage(post,link_imagem);
 
 
 
-               post.imagem = "http://www.sociomatico.com/wp-content/uploads/2018/03/Vitimas-lixeira-de-Hulene.jpg";
-                 Log.println(Log.ERROR,"Atencao",(""+link_imagem));
-                    Log.println(Log.ERROR,"batata",(""+ja1.toString()));
-
-
-                }
-
-
+                Log.println(Log.ERROR,"Atencao",(" "+link_imagem));
+                Log.println(Log.ERROR,"Atencao",(""+ja.length()));
+                Log.println(Log.ERROR,"Atencao",(""+i));
+                Log.println(Log.ERROR,"Atencao",(""+post.titulo));
+                Log.println(Log.ERROR,"Atencao",(""+post.imagem));
 
 
 
-                Log.println(Log.ERROR,"batata",(""+items.toString()));
                 items.add(post);
             }
 
@@ -134,6 +109,56 @@ public class Fetchdata extends AsyncTask<Void,Void,Void> {
         return null;
     }
 
+
+
+
+
+    Post getImage(Post post,String link_imagem){
+
+
+        try {
+            URL url1 =new URL(link_imagem);
+
+            HttpURLConnection httpconnection1 = (HttpURLConnection) url1.openConnection();
+
+            InputStream inputStream1 = httpconnection1.getInputStream();
+
+            BufferedReader bufferedReader1 = new BufferedReader(new InputStreamReader(inputStream1));
+            String line1 = "";
+
+
+            while (line1 != null){
+
+
+                line1 = bufferedReader1.readLine();
+                data1 = data1 +line1;
+
+            }
+
+
+            JSONObject ja1 = new JSONObject(data1);
+
+            post.imagem = ""+ja1.get("source_url");
+
+
+
+
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+        return post;
+
+
+    }
+
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
@@ -141,6 +166,8 @@ public class Fetchdata extends AsyncTask<Void,Void,Void> {
 
         PostAdapter pst = new PostAdapter(internacional.cnt,R.layout.post_layout,items);
         internacional.lv.setAdapter(pst);
+
+
 
 
     }

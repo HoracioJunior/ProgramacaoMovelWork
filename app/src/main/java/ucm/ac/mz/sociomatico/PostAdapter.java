@@ -66,6 +66,7 @@ public class PostAdapter extends BaseAdapter {
             holder = new ViewHolder();
 
             holder.titulo_pub = (TextView) convertView.findViewById(R.id.titulo);
+            holder.imagem = (ImageView) convertView.findViewById(R.id.foto);
 
 
 
@@ -81,7 +82,7 @@ public class PostAdapter extends BaseAdapter {
         }
 
         holder.titulo_pub.setText(itemList.get(position).getTitulo());
-        new BaixarImagem(holder.imagem).execute("http://www.sociomatico.com/wp-content/uploads/2018/03/Vitimas-lixeira-de-Hulene.jpg");
+        new BaixarImagem(holder.imagem).execute(itemList.get(position).imagem);
 
         return convertView;
     }
@@ -126,7 +127,7 @@ public class PostAdapter extends BaseAdapter {
                 foto = BitmapFactory.decodeStream(in);
 
             } catch (IOException e){
-                Log.e("Error",e.getMessage());
+                Log.e("Nao ta a fun",e.getMessage());
             }
 
 
@@ -137,8 +138,12 @@ public class PostAdapter extends BaseAdapter {
 
         protected  void  onPostExecute(Bitmap result){
 
-            imagem.setImageBitmap(result);
+            if(result != null) {
 
+                super.onPostExecute(result);
+                imagem.setImageBitmap(result);
+
+            }
         }
     }
 
