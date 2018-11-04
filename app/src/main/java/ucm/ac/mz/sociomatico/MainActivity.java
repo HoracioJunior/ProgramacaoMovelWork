@@ -131,8 +131,6 @@ public class MainActivity extends AppCompatActivity implements cultura.OnFragmen
   public void abrirCategoria(MenuItem v){
 
 
-      Toast.makeText(this,v.getTitle(),Toast.LENGTH_LONG).show();
-
 
 
       TabLayout tb = findViewById(R.id.tablayout);
@@ -145,6 +143,57 @@ public class MainActivity extends AppCompatActivity implements cultura.OnFragmen
               viewPager.setAdapter(adapter);
               viewPager.setCurrentItem(1);
               onOptionsItemSelected(item1);
+              break;
+
+          case "Sociedade":
+              viewPager.setAdapter(adapter);
+              viewPager.setCurrentItem(2);
+              onOptionsItemSelected(item1);
+              break;
+
+          case "Politica":
+              viewPager.setAdapter(adapter);
+              viewPager.setCurrentItem(3);
+              onOptionsItemSelected(item1);
+              break;
+
+          case "Economia":
+              viewPager.setAdapter(adapter);
+              viewPager.setCurrentItem(4);
+              onOptionsItemSelected(item1);
+              break;
+
+          case "Desporto":
+              viewPager.setAdapter(adapter);
+              viewPager.setCurrentItem(5);
+              onOptionsItemSelected(item1);
+              break;
+
+          case "Fama":
+              viewPager.setAdapter(adapter);
+              viewPager.setCurrentItem(6);
+              onOptionsItemSelected(item1);
+              break;
+
+          case "Tecnologias":
+              viewPager.setAdapter(adapter);
+              viewPager.setCurrentItem(7);
+              onOptionsItemSelected(item1);
+              break;
+
+          case "Cultura":
+              viewPager.setAdapter(adapter);
+              viewPager.setCurrentItem(8);
+              onOptionsItemSelected(item1);
+              break;
+
+          case "Curiosidades":
+              viewPager.setAdapter(adapter);
+              viewPager.setCurrentItem(9);
+              onOptionsItemSelected(item1);
+              break;
+
+          case "Definicões":
               break;
       }
 
