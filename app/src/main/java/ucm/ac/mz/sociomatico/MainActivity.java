@@ -22,6 +22,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements cultura.OnFragmentInteractionListener, curiosidades.OnFragmentInteractionListener, tecnologia.OnFragmentInteractionListener, fama.OnFragmentInteractionListener, desporto.OnFragmentInteractionListener ,economia.OnFragmentInteractionListener, politica.OnFragmentInteractionListener, categorias.OnFragmentInteractionListener, internacional.OnFragmentInteractionListener,sociedade.OnFragmentInteractionListener {
@@ -127,10 +128,10 @@ public class MainActivity extends AppCompatActivity implements cultura.OnFragmen
 
 
 
-  public void metodo(MenuItem v){
+  public void abrirCategoria(MenuItem v){
 
 
-      Toast.makeText(this,"batata",Toast.LENGTH_LONG).show();
+      Toast.makeText(this,v.getTitle(),Toast.LENGTH_LONG).show();
 
 
 
@@ -138,9 +139,14 @@ public class MainActivity extends AppCompatActivity implements cultura.OnFragmen
       final ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
       final ucm.ac.mz.sociomatico.PagerAdapter adapter = new ucm.ac.mz.sociomatico.PagerAdapter(getSupportFragmentManager(),tb.getTabCount());
 
-      viewPager.setAdapter(adapter);
-      viewPager.setCurrentItem(1);
-      onOptionsItemSelected(item1);
+
+      switch (""+v.getTitle()){
+          case "Internacional":
+              viewPager.setAdapter(adapter);
+              viewPager.setCurrentItem(1);
+              onOptionsItemSelected(item1);
+              break;
+      }
 
 
   }

@@ -4,7 +4,7 @@
 
 
 
-            <item android:onClick="metodo" android:id="@+id/nav_item2" android:title="Internacional" android:icon="@drawable/world48dp"></item>
+            <item android:onClick="abrirCategoria" android:id="@+id/nav_item2" android:title="Internacional" android:icon="@drawable/world48dp"></item>
 
 
             <item android:id="@+id/nav_item3" android:title="Sociedade" android:icon="@drawable/people48dp"></item>
