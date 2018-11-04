@@ -43,7 +43,7 @@ public class Fetchdata extends AsyncTask<Void,Void,Void> {
         try {
 
 
-            URL url =new URL("http://www.sociomatico.com/wp-json/wp/v2/posts");
+            URL url =new URL("http://www.sociomatico.com/wp-json/wp/v2/posts?categories=1062");
             HttpURLConnection httpconnection = (HttpURLConnection) url.openConnection();
 
             InputStream inputStream = httpconnection.getInputStream();
@@ -80,12 +80,14 @@ public class Fetchdata extends AsyncTask<Void,Void,Void> {
 
                // dataParsed = dataParsed+singleParsed+"";
 
+                Log.println(Log.ERROR,"Atencao",(""+link_imagem));
+
 
                 post = getImage(post,link_imagem);
 
 
 
-                Log.println(Log.ERROR,"Atencao",(" "+link_imagem));
+
                 Log.println(Log.ERROR,"Atencao",(""+ja.length()));
                 Log.println(Log.ERROR,"Atencao",(""+i));
                 Log.println(Log.ERROR,"Atencao",(""+post.titulo));
@@ -117,13 +119,21 @@ public class Fetchdata extends AsyncTask<Void,Void,Void> {
 
 
         try {
+
+            Log.println(Log.ERROR,"SOZINHO",(""+link_imagem));
             URL url1 =new URL(link_imagem);
 
-            HttpURLConnection httpconnection1 = (HttpURLConnection) url1.openConnection();
 
-            InputStream inputStream1 = httpconnection1.getInputStream();
+            HttpURLConnection httpconnection1 = null;
+            httpconnection1 =  (HttpURLConnection) url1.openConnection();
 
-            BufferedReader bufferedReader1 = new BufferedReader(new InputStreamReader(inputStream1));
+            InputStream inputStream1 = null;
+            inputStream1 =  httpconnection1.getInputStream();
+
+
+
+            BufferedReader bufferedReader1 = null;
+            bufferedReader1 = new BufferedReader(new InputStreamReader(inputStream1));
             String line1 = "";
 
 
