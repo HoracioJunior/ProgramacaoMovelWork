@@ -8,11 +8,11 @@ todas noticias patentes no aplicativo poderao ser encontradas tambem no <a href=
 <br>
 <p>Interface do Aplicativo</p>
 <br>
-<img src="https://github.com/HoracioJunior/ProgramacaoMovelWork/blob/master/Screenshot_1539245730.png">
+<img src="https://github.com/HoracioJunior/ProgramacaoMovelWork/blob/master/Screenshot_1539245730.png"> <img src="">
 <br>
 <h3>Desenvolvedores ou Colaboradores:</h3>
 <strong>Alberto Jordane</strong><br>
 <strong>Horacio Junior</strong><br>
 <strong>Kelven de Sousa</strong><br>
 
-<strong>Nota:</strong> O Alberto nao aparec na aba de contribuidores desse projcto por motivo desconhecido, mas ele é membro dos desenvolvedores e fez varios commites.
+<strong>Nota:</strong> O Alberto nao aparece na aba de contribuidores desse projcto por motivo desconhecido, mas ele é membro dos desenvolvedores e fez varios commites.
