@@ -8,7 +8,7 @@ todas noticias patentes no aplicativo poderao ser encontradas tambem no <a href=
 <br>
 <p>Interface do Aplicativo</p>
 <br>
-<img src="https://github.com/HoracioJunior/ProgramacaoMovelWork/blob/master/Screenshot_1539245730.png"> <img src="">
+<img src="https://github.com/HoracioJunior/ProgramacaoMovelWork/blob/master/Screenshot_1539245730.png"> 
 <br>
 <h3>Desenvolvedores ou Colaboradores:</h3>
 <strong>Alberto Jordane</strong><br>
