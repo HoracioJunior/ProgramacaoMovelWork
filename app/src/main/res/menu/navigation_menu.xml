@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+
+    <item android:id="@+id/nav_item1" android:title="Categorias"></item>
+    <!--Internacional-->
+    <item android:title="Internacional" >
+        <menu>
+            <item android:id="@+id/nav_inter_1" android:onClick="africa" android:title="Africa" android:icon="@drawable/world48dp"></item>
+            <item android:id="@+id/nav_inter_2" android:onClick="asia" android:title="Asia" android:icon="@drawable/world48dp"></item>
+            <item android:id="@+id/nav_inter_3"  android:onClick="china" android:title="Brasil" android:icon="@drawable/world48dp"></item>
+            <item android:id="@+id/nav_inter_4" android:onClick="brasil" android:title="EUA" android:icon="@drawable/world48dp"></item>
+        </menu>
+    </item>
+    <!--Desporto-->
+    <item android:title="Desporto" >
+        <menu>
+            <item android:id="@+id/nav_des_1" android:onClick="futebol" android:title="Futebol" android:icon="@drawable/desporto48"></item>
+            <item android:id="@+id/nav_des_2" android:onClick="automotivo" android:title="Automotivo" android:icon="@drawable/desporto48"></item>
+            <item android:id="@+id/nav_des_3" android:onClick="basquete" android:title="Basquete" android:icon="@drawable/desporto48"></item>
+            <item android:id="@+id/nav_des_4" android:onClick="boxe" android:title="Boxe" android:icon="@drawable/desporto48"></item>
+        </menu>
+    </item>
+    <!--Tecnologias-->
+    <item android:title="Tecnologias" >
+        <menu>
+            <item android:id="@+id/nav_tech_1" android:onClick="medecina" android:title="Medecina" android:icon="@drawable/tecnologias48" ></item>
+        </menu>
+    </item>
+    <!--Cultura-->
+    <item android:title="Cultura" >
+        <menu>
+            <item android:id="@+id/nav_cult_1" android:onClick="artes" android:title="Artes" android:icon="@drawable/cultura1_48" ></item>
+            <item android:id="@+id/nav_cult_2" android:onClick="moda" android:title="Moda" android:icon="@drawable/cultura1_48"></item>
+        </menu>
+    </item>
+    <group android:checkableBehavior="none">
+    <!--Sociedade-->
+    <item android:id="@+id/nav_sociiedade" android:onClick="sociedade" android:title="Sociedade" android:icon="@drawable/people48dp"></item>
+    <!--Politica-->
+    <item android:id="@+id/nav_politica" android:onClick="politica" android:title="Politica" android:icon="@drawable/politica48"></item>
+    <!--Economia-->
+    <item android:id="@+id/nav_economia" android:onClick="economia" android:title="Economia" android:icon="@drawable/economia48"></item>
+    <!--Fama-->
+    <item android:id="@+id/nav_fama" android:onClick="fama" android:title="Fama" android:icon="@drawable/fama48"></item>
+    <!--Curiosidades-->
+    <item android:id="@+id/nav_curiosidade" android:onClick="curiosidades" android:title="Curiosidades" android:icon="@drawable/curiosidades_48"></item>
+    </group>
+
+        <group android:checkableBehavior="none" >
+        <item android:id="@+id/nav_definicoes" android:title="Definicões"  android:onClick="definicoes" android:icon="@drawable/settings_48"></item>
+        <item android:id="@+id/nav_partilhar" android:onClick="" android:title="Partilhar"   android:icon="@drawable/ic_share_black_24dp"></item>
+        </group>
+
+
+
+
+</menu>
