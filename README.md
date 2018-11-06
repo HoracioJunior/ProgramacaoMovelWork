@@ -5,7 +5,7 @@ no aplicativo.
 todas noticias patentes no aplicativo poderao ser encontradas tambem no <a href="sociomatico.com">SOCIOMATICO</a></p></h5>
 <br>
 <p>Interface do WebSite</p>
-<img src="https://github.com/HoracioJunior/ProgramacaoMovelWork/blob/master/Sociomatico%20APP.jpeg"> 
+<img src="https://github.com/HoracioJunior/ProgramacaoMovelWork/blob/master/socio.PNG"> 
 <p>Interface do Aplicativo</p>
 <br>
 <img src="https://github.com/HoracioJunior/ProgramacaoMovelWork/blob/master/Sociomatico%20APP.jpeg"> 
