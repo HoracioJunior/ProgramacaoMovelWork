@@ -4,11 +4,11 @@ no aplicativo.
 <p>Este aplicativo consome um <strong>JSON</strong> do website <a href="sociomatico.com">SOCIOMATICO</a> para o aplicativo, ou seja
 todas noticias patentes no aplicativo poderao ser encontradas tambem no <a href="sociomatico.com">SOCIOMATICO</a></p></h5>
 <br>
-<img src="https://user-images.githubusercontent.com/38478347/47970891-1afb3680-e040-11e8-9137-e2a683ec55c9.PNG">
-<br>
+<p>Interface do WebSite</p>
+<img src="https://github.com/HoracioJunior/ProgramacaoMovelWork/blob/master/socio.PNG"> 
 <p>Interface do Aplicativo</p>
 <br>
-<img src="https://github.com/HoracioJunior/ProgramacaoMovelWork/blob/master/Screenshot_1539245730.png"> 
+<img src="https://github.com/HoracioJunior/ProgramacaoMovelWork/blob/master/Sociomatico%20APP.jpeg"> 
 <br>
 <h3>Desenvolvedores ou Colaboradores:</h3>
 <strong>Alberto Jordane</strong><br>
