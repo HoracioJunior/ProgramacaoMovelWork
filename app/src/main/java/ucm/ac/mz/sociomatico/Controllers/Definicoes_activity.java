@@ -1,4 +1,4 @@
-package ucm.ac.mz.sociomatico;
+package ucm.ac.mz.sociomatico.Controllers;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -21,6 +21,9 @@ import android.view.MenuItem;
 import android.support.v4.app.NavUtils;
 
 import java.util.List;
+
+import ucm.ac.mz.sociomatico.AppCompatPreferenceActivity;
+import ucm.ac.mz.sociomatico.R;
 
 /**
  * A {@link PreferenceActivity} that presents a set of application settings. On

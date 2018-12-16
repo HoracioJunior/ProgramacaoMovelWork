@@ -1,36 +1,27 @@
-package ucm.ac.mz.sociomatico;
+package ucm.ac.mz.sociomatico.Controllers;
 
-
-
-import android.content.ClipData;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.annotation.Nullable;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
+import ucm.ac.mz.sociomatico.R;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link internacional.OnFragmentInteractionListener} interface
+ * {@link tecnologia.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link internacional#newInstance} factory method to
+ * Use the {@link tecnologia#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class internacional extends Fragment {
+public class tecnologia extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -42,7 +33,7 @@ public class internacional extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public internacional() {
+    public tecnologia() {
         // Required empty public constructor
     }
 
@@ -52,31 +43,17 @@ public class internacional extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment internacional.
+     * @return A new instance of fragment tecnologia.
      */
     // TODO: Rename and change types and number of parameters
-    public static internacional newInstance(String param1, String param2) {
-        internacional fragment = new internacional();
+    public static tecnologia newInstance(String param1, String param2) {
+        tecnologia fragment = new tecnologia();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
-
-
-
-
-
         return fragment;
     }
-
-
-
-
-
-
-
-
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -84,26 +61,34 @@ public class internacional extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
-
-
-
-
-
-
-
         }
-
-
-
-
-
-
     }
 
+    static ListView lv;
+    static  Context cnt ;
+
+
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+
+        View view = inflater.inflate(R.layout.fragment_tecnologia, container,false);
 
 
 
 
+        lv = (ListView) view.findViewById(R.id.lista_posts7);
+
+
+
+
+
+
+
+        return view;
+    }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -129,7 +114,6 @@ public class internacional extends Fragment {
         mListener = null;
     }
 
-
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -143,49 +127,5 @@ public class internacional extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
-
-
     }
-
-
-
-
-    static ListView lv;
-    static  Context cnt ;
-
-
-
-        @Nullable
-        @Override
-        public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-
-           View view = inflater.inflate(R.layout.fragment_internacional, container,false);
-
-
-
-
-            lv = (ListView) view.findViewById(R.id.lista_posts);
-
-            PostAdapter adapter ;
-            ArrayList<Post> listaPost = new  ArrayList<Post>();
-
-            cnt = view.getContext();
-
-
-
-
-            Fetchdata process = new Fetchdata("http://www.sociomatico.com/wp-json/wp/v2/posts?categories=1062",1);
-            process.execute();
-
-
-
-
-
-
-
-
-            return view;
-        }
-    }
-
+}

@@ -1,10 +1,10 @@
-package ucm.ac.mz.sociomatico;
+package ucm.ac.mz.sociomatico.Controllers;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import ucm.ac.mz.sociomatico.*;
+import ucm.ac.mz.sociomatico.Models.categorias;
 
 
 public class PagerAdapter extends FragmentStatePagerAdapter {

@@ -1,4 +1,4 @@
-package ucm.ac.mz.sociomatico;
+package ucm.ac.mz.sociomatico.Controllers;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import ucm.ac.mz.sociomatico.R;
 
 public class Teste extends AppCompatActivity {
 

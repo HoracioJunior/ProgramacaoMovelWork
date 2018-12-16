@@ -19,7 +19,7 @@
 
 
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".Controllers.MainActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -34,7 +34,7 @@
 
 
 
-        <activity android:name=".splash">
+        <activity android:name=".Controllers.splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,7 +47,7 @@
 
 
         <activity
-            android:name=".Teste"
+            android:name=".Controllers.Teste"
             android:label="@string/title_activity_teste"
             android:theme="@style/AppTheme">
 

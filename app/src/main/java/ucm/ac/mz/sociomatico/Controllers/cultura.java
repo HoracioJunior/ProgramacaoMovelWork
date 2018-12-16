@@ -1,4 +1,4 @@
-package ucm.ac.mz.sociomatico;
+package ucm.ac.mz.sociomatico.Controllers;
 
 import android.content.Context;
 import android.net.Uri;
@@ -10,18 +10,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import java.util.ArrayList;
+import ucm.ac.mz.sociomatico.R;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link tecnologia.OnFragmentInteractionListener} interface
+ * {@link cultura.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link tecnologia#newInstance} factory method to
+ * Use the {@link cultura#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class tecnologia extends Fragment {
+public class cultura extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -33,7 +33,7 @@ public class tecnologia extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public tecnologia() {
+    public cultura() {
         // Required empty public constructor
     }
 
@@ -43,11 +43,11 @@ public class tecnologia extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment tecnologia.
+     * @return A new instance of fragment cultura.
      */
     // TODO: Rename and change types and number of parameters
-    public static tecnologia newInstance(String param1, String param2) {
-        tecnologia fragment = new tecnologia();
+    public static cultura newInstance(String param1, String param2) {
+        cultura fragment = new cultura();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -74,23 +74,12 @@ public class tecnologia extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
 
 
-        View view = inflater.inflate(R.layout.fragment_tecnologia, container,false);
+        View view = inflater.inflate(R.layout.fragment_cultura, container,false);
 
 
 
 
-        lv = (ListView) view.findViewById(R.id.lista_posts7);
-
-        PostAdapter adapter ;
-        ArrayList<Post> listaPost = new  ArrayList<Post>();
-
-        cnt = view.getContext();
-
-
-
-
-        Fetchdata process = new Fetchdata("http://www.sociomatico.com/wp-json/wp/v2/posts?categories=285",7);
-        process.execute();
+        lv = (ListView) view.findViewById(R.id.lista_posts8);
 
 
 

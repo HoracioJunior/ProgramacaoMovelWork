@@ -1,4 +1,4 @@
-package ucm.ac.mz.sociomatico;
+package ucm.ac.mz.sociomatico.Controllers;
 
 import android.content.Context;
 import android.net.Uri;
@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import java.util.ArrayList;
+import ucm.ac.mz.sociomatico.R;
 
 
 /**
@@ -81,16 +81,6 @@ public class fama extends Fragment {
 
         lv = (ListView) view.findViewById(R.id.lista_posts6);
 
-        PostAdapter adapter ;
-        ArrayList<Post> listaPost = new  ArrayList<Post>();
-
-        cnt = view.getContext();
-
-
-
-
-        Fetchdata process = new Fetchdata("http://www.sociomatico.com/wp-json/wp/v2/posts?categories=227",6);
-        process.execute();
 
 
 

@@ -1,4 +1,4 @@
-package ucm.ac.mz.sociomatico;
+package ucm.ac.mz.sociomatico.Controllers;
 
 import android.content.Context;
 import android.net.Uri;
@@ -10,18 +10,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import java.util.ArrayList;
+import ucm.ac.mz.sociomatico.R;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link politica.OnFragmentInteractionListener} interface
+ * {@link curiosidades.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link politica#newInstance} factory method to
+ * Use the {@link curiosidades#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class politica extends Fragment {
+public class curiosidades extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -33,7 +33,7 @@ public class politica extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public politica() {
+    public curiosidades() {
         // Required empty public constructor
     }
 
@@ -43,11 +43,11 @@ public class politica extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment politica.
+     * @return A new instance of fragment curiosidades.
      */
     // TODO: Rename and change types and number of parameters
-    public static politica newInstance(String param1, String param2) {
-        politica fragment = new politica();
+    public static curiosidades newInstance(String param1, String param2) {
+        curiosidades fragment = new curiosidades();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,6 +64,7 @@ public class politica extends Fragment {
         }
     }
 
+
     static ListView lv;
     static  Context cnt ;
 
@@ -74,23 +75,8 @@ public class politica extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
 
 
-        View view = inflater.inflate(R.layout.fragment_politica, container,false);
+        View view = inflater.inflate(R.layout.fragment_curiosidades, container,false);
 
-
-
-
-        lv = (ListView) view.findViewById(R.id.lista_posts3);
-
-        PostAdapter adapter ;
-        ArrayList<Post> listaPost = new  ArrayList<Post>();
-
-        cnt = view.getContext();
-
-
-
-
-        Fetchdata process = new Fetchdata("http://www.sociomatico.com/wp-json/wp/v2/posts?categories=1015",3);
-        process.execute();
 
 
 

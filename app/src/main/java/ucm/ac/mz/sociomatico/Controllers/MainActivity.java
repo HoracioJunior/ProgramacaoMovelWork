@@ -1,31 +1,19 @@
-package ucm.ac.mz.sociomatico;
+package ucm.ac.mz.sociomatico.Controllers;
 
-import android.content.ClipData;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.NavigationView.OnNavigationItemSelectedListener;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Switch;
-import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements cultura.OnFragmentInteractionListener, curiosidades.OnFragmentInteractionListener, tecnologia.OnFragmentInteractionListener, fama.OnFragmentInteractionListener, desporto.OnFragmentInteractionListener ,economia.OnFragmentInteractionListener, politica.OnFragmentInteractionListener, categorias.OnFragmentInteractionListener, internacional.OnFragmentInteractionListener,sociedade.OnFragmentInteractionListener {
+import ucm.ac.mz.sociomatico.Models.categorias;
+import ucm.ac.mz.sociomatico.R;
+
+public class MainActivity extends AppCompatActivity implements cultura.OnFragmentInteractionListener, curiosidades.OnFragmentInteractionListener, tecnologia.OnFragmentInteractionListener, fama.OnFragmentInteractionListener, desporto.OnFragmentInteractionListener,economia.OnFragmentInteractionListener, politica.OnFragmentInteractionListener, categorias.OnFragmentInteractionListener, internacional.OnFragmentInteractionListener,sociedade.OnFragmentInteractionListener {
 
 
     private Toolbar toolbar;
@@ -75,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements cultura.OnFragmen
 
 
        final ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-       final ucm.ac.mz.sociomatico.PagerAdapter adapter = new ucm.ac.mz.sociomatico.PagerAdapter(getSupportFragmentManager(),tb.getTabCount());
+       final ucm.ac.mz.sociomatico.Controllers.PagerAdapter adapter = new ucm.ac.mz.sociomatico.Controllers.PagerAdapter(getSupportFragmentManager(),tb.getTabCount());
 
        viewPager.setAdapter(adapter);
         viewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tb));
@@ -136,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements cultura.OnFragmen
 
       TabLayout tb = findViewById(R.id.tablayout);
       final ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-      final ucm.ac.mz.sociomatico.PagerAdapter adapter = new ucm.ac.mz.sociomatico.PagerAdapter(getSupportFragmentManager(),tb.getTabCount());
+      final ucm.ac.mz.sociomatico.Controllers.PagerAdapter adapter = new ucm.ac.mz.sociomatico.Controllers.PagerAdapter(getSupportFragmentManager(),tb.getTabCount());
 
 
       switch (""+v.getTitle()){

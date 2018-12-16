@@ -1,17 +1,27 @@
-package ucm.ac.mz.sociomatico;
+package ucm.ac.mz.sociomatico.Models;
 
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+import ucm.ac.mz.sociomatico.R;
 
 
 /**
@@ -66,8 +76,15 @@ public class categorias extends Fragment {
     }
 
 
-    static ListView lv;
-    static  Context cnt ;
+    private RecyclerView recyclerView;
+    private ProgressBar progressBar;
+    private LinearLayoutManager mLayoutManager;
+    private ArrayList<Model> list;
+    private RecyclerViewAdapter adapter;
+
+    private String baseURL = "http://www.sociomatico.com";
+
+    public static List<WPPost> mListPost;
 
 
 
@@ -80,19 +97,22 @@ public class categorias extends Fragment {
 
 
 
+        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        progressBar = (ProgressBar) view.findViewById(R.id.progressbar);
 
-        lv = (ListView) view.findViewById(R.id.lista_posts1);
+        mLayoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false);
+        recyclerView.setLayoutManager(mLayoutManager);
 
-        PostAdapter adapter ;
-        ArrayList<Post> listaPost = new  ArrayList<Post>();
+        list = new ArrayList<Model>();
+        /// call retrofill
+        getRetrofit();
 
-        cnt = view.getContext();
+        adapter = new RecyclerViewAdapter( list, view.getContext());
+
+        recyclerView.setAdapter(adapter);
 
 
 
-
-        Fetchdata process = new Fetchdata("http://www.sociomatico.com/wp-json/wp/v2/posts",0);
-        process.execute();
 
 
 
@@ -141,4 +161,85 @@ public class categorias extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+
+
+
+
+    public void getRetrofit(){
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(baseURL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        RetrofitArrayApi service = retrofit.create(RetrofitArrayApi.class);
+        Call<List<WPPost>> call = service.getPostInfo();
+
+        // to make call to dynamic URL
+
+        // String yourURL = yourURL.replace(BaseURL,"");
+        // Call<List<WPPost>>  call = service.getPostInfo( yourURL);
+
+        /// to get only 6 post from your blog
+        // http://your-blog-url/wp-json/wp/v2/posts?per_page=2
+
+        // to get any specific blog post, use id of post
+        //  http://www.blueappsoftware.in/wp-json/wp/v2/posts/1179
+
+        // to get only title and id of specific
+        // http://www.blueappsoftware.in/android/wp-json/wp/v2/posts/1179?fields=id,title
+
+
+
+        call.enqueue(new Callback<List<WPPost>>() {
+            @Override
+            public void onResponse(Call<List<WPPost>> call, Response<List<WPPost>> response) {
+                progressBar.setVisibility(View.GONE);
+                for (int i=0; i<response.body().size();i++){
+                    Log.e("main ", " title "+ response.body().get(i).getTitle().getRendered() + " "+
+                            response.body().get(i).getId());
+
+                    String tempdetails =  response.body().get(i).getExcerpt().getRendered().toString();
+                    tempdetails = tempdetails.replace("<p>","");
+                    tempdetails = tempdetails.replace("</p>","");
+                    tempdetails = tempdetails.replace("[&hellip;]","");
+
+                    list.add( new Model( Model.IMAGE_TYPE,  response.body().get(i).getTitle().getRendered(),
+                            tempdetails,
+                            response.body().get(i).getLinks().getWpFeaturedmedia().get(0).getHref())  );
+
+                }
+                adapter.notifyDataSetChanged();
+
+            }
+
+
+
+
+
+
+            @Override
+            public void onFailure(Call<List<WPPost>> call, Throwable t) {
+
+            }
+        });
+
+    }
+    public static List<WPPost> getList(){
+        return  mListPost;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
