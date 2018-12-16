@@ -7,22 +7,6 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-class About {
-
-   @SerializedName("href")
-   @Expose
-   private String href;
-
-   public String getHref() {
-       return href;
-   }
-
-   public void setHref(String href) {
-       this.href = href;
-   }
-
-}
-
 
 class Author {
 
@@ -130,33 +114,6 @@ class Cury {
 
    public void setTemplated(Boolean templated) {
        this.templated = templated;
-   }
-
-}
-
-class Excerpt {
-
-   @SerializedName("rendered")
-   @Expose
-   private String rendered;
-   @SerializedName("protected")
-   @Expose
-   private Boolean _protected;
-
-   public String getRendered() {
-       return rendered;
-   }
-
-   public void setRendered(String rendered) {
-       this.rendered = rendered;
-   }
-
-   public Boolean getProtected() {
-       return _protected;
-   }
-
-   public void setProtected(Boolean _protected) {
-       this._protected = _protected;
    }
 
 }
@@ -343,121 +300,6 @@ class JetpackRelatedPost {
 
 }
 
-class Links {
-
-  @SerializedName("self")
-  @Expose
-  private List<Self> self = null;
-  @SerializedName("collection")
-  @Expose
-  private List<Collection> collection = null;
-  @SerializedName("about")
-  @Expose
-  private List<About> about = null;
-  @SerializedName("author")
-  @Expose
-  private List<Author> author = null;
-  @SerializedName("replies")
-  @Expose
-  private List<Reply> replies = null;
-  @SerializedName("version-history")
-  @Expose
-  private List<VersionHistory> versionHistory = null;
-  @SerializedName("wp:featuredmedia")
-  @Expose
-  private List<WpFeaturedmedium> wpFeaturedmedia = null;
-  @SerializedName("wp:attachment")
-  @Expose
-  private List<WpAttachment> wpAttachment = null;
-  @SerializedName("wp:term")
-  @Expose
-  private List<WpTerm> wpTerm = null;
-  @SerializedName("curies")
-  @Expose
-  private List<Cury> curies = null;
-
-  public List<Self> getSelf() {
-      return self;
-  }
-
-  public void setSelf(List<Self> self) {
-      this.self = self;
-  }
-
-  public List<Collection> getCollection() {
-      return collection;
-  }
-
-  public void setCollection(List<Collection> collection) {
-      this.collection = collection;
-  }
-
-  public List<About> getAbout() {
-      return about;
-  }
-
-  public void setAbout(List<About> about) {
-      this.about = about;
-  }
-
-  public List<Author> getAuthor() {
-      return author;
-  }
-
-  public void setAuthor(List<Author> author) {
-      this.author = author;
-  }
-
-  public List<Reply> getReplies() {
-      return replies;
-  }
-
-  public void setReplies(List<Reply> replies) {
-      this.replies = replies;
-  }
-
-  public List<VersionHistory> getVersionHistory() {
-      return versionHistory;
-  }
-
-  public void setVersionHistory(List<VersionHistory> versionHistory) {
-      this.versionHistory = versionHistory;
-  }
-
-  public List<WpFeaturedmedium> getWpFeaturedmedia() {
-      return wpFeaturedmedia;
-  }
-
-  public void setWpFeaturedmedia(List<WpFeaturedmedium> wpFeaturedmedia) {
-      this.wpFeaturedmedia = wpFeaturedmedia;
-  }
-
-  public List<WpAttachment> getWpAttachment() {
-      return wpAttachment;
-  }
-
-  public void setWpAttachment(List<WpAttachment> wpAttachment) {
-      this.wpAttachment = wpAttachment;
-  }
-
-  public List<WpTerm> getWpTerm() {
-      return wpTerm;
-  }
-
-  public void setWpTerm(List<WpTerm> wpTerm) {
-      this.wpTerm = wpTerm;
-  }
-
-  public List<Cury> getCuries() {
-      return curies;
-  }
-
-  public void setCuries(List<Cury> curies) {
-      this.curies = curies;
-  }
-
-}
-
 class Meta {
 
   @SerializedName("amp_status")
@@ -518,22 +360,6 @@ class Self {
 
 }
 
-
-class Title {
-
-    @SerializedName("rendered")
-    @Expose
-    private String rendered;
-
-    public String getRendered() {
-        return rendered;
-    }
-
-    public void setRendered(String rendered) {
-        this.rendered = rendered;
-    }
-
-}
 
 class UrlMeta {
 
@@ -889,32 +715,6 @@ class WpAttachment {
 }
 
 
-class WpFeaturedmedium {
-
-    @SerializedName("embeddable")
-    @Expose
-    private Boolean embeddable;
-    @SerializedName("href")
-    @Expose
-    private String href;
-
-    public Boolean getEmbeddable() {
-        return embeddable;
-    }
-
-    public void setEmbeddable(Boolean embeddable) {
-        this.embeddable = embeddable;
-    }
-
-    public String getHref() {
-        return href;
-    }
-
-    public void setHref(String href) {
-        this.href = href;
-    }
-
-}
 //-----------------------------------blueappsoftware.wordpressinandroid.WpTerm.java-----------------------------------
 
 

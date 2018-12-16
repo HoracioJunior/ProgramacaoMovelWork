@@ -1,4 +1,4 @@
-package ucm.ac.mz.sociomatico.Models;
+package ucm.ac.mz.sociomatico.Controllers;
 
 import android.content.Context;
 import android.net.Uri;
@@ -21,6 +21,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import ucm.ac.mz.sociomatico.Models.Model;
+import ucm.ac.mz.sociomatico.Models.RecyclerViewAdapter;
+import ucm.ac.mz.sociomatico.Models.RetrofitArrayApi;
+import ucm.ac.mz.sociomatico.Models.WPPost;
 import ucm.ac.mz.sociomatico.R;
 
 
