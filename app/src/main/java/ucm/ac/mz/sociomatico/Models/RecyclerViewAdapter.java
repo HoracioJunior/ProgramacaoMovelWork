@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import ucm.ac.mz.sociomatico.Controllers.categorias;
 import ucm.ac.mz.sociomatico.Models.Model;
 import ucm.ac.mz.sociomatico.R;
 
@@ -29,9 +30,7 @@ import ucm.ac.mz.sociomatico.Models.Model;
 //import ucm.ac.mz.sociomatico.Models.WPPostDetails;
 import ucm.ac.mz.sociomatico.R;
 
-/**
- * Created by Jaink on 14-09-2017.
- */
+
 
 
 
@@ -73,25 +72,39 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
         ( (ImageTypeViewHolder) holder).title.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             //   Intent intent = new Intent(mContext, WPPostDetails.class);
-             //   intent.putExtra("itemPosition", position);
-             //   mContext.startActivity(intent);
+              Intent intent = new Intent(mContext, Detalhes.class);
+
+
+
+               intent.putExtra("itemPosition", position);
+               intent.putExtra("titulo", (categorias.getList().get(position).getTitle().getRendered().toString()));
+                intent.putExtra("conteudo", (categorias.getList().get(position).getContent().getRendered()));
+
+
+
+               mContext.startActivity(intent);
             }
         });
+
         ( (ImageTypeViewHolder) holder).subtitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Intent intent = new Intent(mContext, WPPostDetails.class);
-               // intent.putExtra("itemPosition", position);
-               // mContext.startActivity(intent);
+              Intent intent = new Intent(mContext,Detalhes.class);
+              intent.putExtra("itemPosition", position);
+                intent.putExtra("titulo", ((ImageTypeViewHolder) holder).title.getText());
+                intent.putExtra("conteudo", dataset.get(position).content);
+                intent.putExtra("imagem", dataset.get(position).Image);
+               mContext.startActivity(intent);
             }
         });
         ( (ImageTypeViewHolder) holder).imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Intent intent = new Intent(mContext, WPPostDetails.class);
-              //  intent.putExtra("itemPosition", position);
-              //  mContext.startActivity(intent);
+              Intent intent = new Intent(mContext, Detalhes.class);
+              intent.putExtra("itemPosition", position);
+              intent.putExtra("titulo", (categorias.getList().get(position).getTitle().getRendered().toString()));
+
+              mContext.startActivity(intent);
             }
         });
 

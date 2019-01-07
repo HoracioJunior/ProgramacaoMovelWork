@@ -26,6 +26,7 @@ import ucm.ac.mz.sociomatico.Models.RecyclerViewAdapter;
 import ucm.ac.mz.sociomatico.Models.RetrofitArrayApi;
 import ucm.ac.mz.sociomatico.Models.WPPost;
 import ucm.ac.mz.sociomatico.R;
+import  ucm.ac.mz.sociomatico.Models.*;
 
 
 /**
@@ -108,7 +109,7 @@ public class categorias extends Fragment {
         recyclerView.setLayoutManager(mLayoutManager);
 
         list = new ArrayList<Model>();
-        /// call retrofill
+        /// call retrofit
         getRetrofit();
 
         adapter = new RecyclerViewAdapter( list, view.getContext());
@@ -178,12 +179,12 @@ public class categorias extends Fragment {
                 .build();
 
         RetrofitArrayApi service = retrofit.create(RetrofitArrayApi.class);
-        Call<List<WPPost>> call = service.getPostInfo();
+        //Call<List<WPPost>> call = service.getPostInfo();
 
         // to make call to dynamic URL
 
-        // String yourURL = yourURL.replace(BaseURL,"");
-        // Call<List<WPPost>>  call = service.getPostInfo( yourURL);
+
+        Call<List<WPPost>>  call = service.getPostInfo("http://www.sociomatico.com/wp-json/wp/v2/posts?categories=1062");
 
         /// to get only 6 post from your blog
         // http://your-blog-url/wp-json/wp/v2/posts?per_page=2
@@ -204,6 +205,8 @@ public class categorias extends Fragment {
                     Log.e("main ", " title "+ response.body().get(i).getTitle().getRendered() + " "+
                             response.body().get(i).getId());
 
+
+
                     String tempdetails =  response.body().get(i).getExcerpt().getRendered().toString();
                     tempdetails = tempdetails.replace("<p>","");
                     tempdetails = tempdetails.replace("</p>","");
@@ -211,7 +214,7 @@ public class categorias extends Fragment {
 
                     list.add( new Model( Model.IMAGE_TYPE,  response.body().get(i).getTitle().getRendered(),
                             tempdetails,
-                            response.body().get(i).getLinks().getWpFeaturedmedia().get(0).getHref())  );
+                            response.body().get(i).getLinks().getWpFeaturedmedia().get(0).getHref(), response.body().get(i).getContent().getRendered()));
 
                 }
                 adapter.notifyDataSetChanged();

@@ -14,26 +14,13 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
-
-
-
         <activity android:name=".Controllers.MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
-
-
         </activity>
-
-
-
-
         <activity android:name=".Controllers.splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,24 +28,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-
-
-
         <activity
             android:name=".Controllers.Teste"
             android:label="@string/title_activity_teste"
             android:theme="@style/AppTheme">
-
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.OPENABLE" />
-
             </intent-filter>
-
         </activity>
+        <activity android:name=".Models.WPPostDetails" />
+        <activity
+            android:name=".Models.Detalhes"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_detalhes"
+            android:theme="@style/FullscreenTheme"></activity>
     </application>
 
 </manifest>
