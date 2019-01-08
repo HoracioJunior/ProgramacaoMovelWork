@@ -1,9 +1,5 @@
 package ucm.ac.mz.sociomatico.Models;
 
-/**
- * Created by Jaink on 14-09-2017.
- */
-
 public class Model {
 
     public static final int IMAGE_TYPE =1;

@@ -184,18 +184,7 @@ public class categorias extends Fragment {
         // to make call to dynamic URL
 
 
-        Call<List<WPPost>>  call = service.getPostInfo("http://www.sociomatico.com/wp-json/wp/v2/posts?categories=1062");
-
-        /// to get only 6 post from your blog
-        // http://your-blog-url/wp-json/wp/v2/posts?per_page=2
-
-        // to get any specific blog post, use id of post
-        //  http://www.blueappsoftware.in/wp-json/wp/v2/posts/1179
-
-        // to get only title and id of specific
-        // http://www.blueappsoftware.in/android/wp-json/wp/v2/posts/1179?fields=id,title
-
-
+        Call<List<WPPost>>  call = service.getPostInfo("http://www.sociomatico.com/wp-json/wp/v2/posts?categories=1062&_embed=true");
 
         call.enqueue(new Callback<List<WPPost>>() {
             @Override
@@ -207,6 +196,10 @@ public class categorias extends Fragment {
 
 
 
+
+
+
+
                     String tempdetails =  response.body().get(i).getExcerpt().getRendered().toString();
                     tempdetails = tempdetails.replace("<p>","");
                     tempdetails = tempdetails.replace("</p>","");
@@ -214,7 +207,7 @@ public class categorias extends Fragment {
 
                     list.add( new Model( Model.IMAGE_TYPE,  response.body().get(i).getTitle().getRendered(),
                             tempdetails,
-                            response.body().get(i).getLinks().getWpFeaturedmedia().get(0).getHref(), response.body().get(i).getContent().getRendered()));
+                            response.body().get(i).getEmbedded().getWpFeaturedmedia().get(0).getSourceUrl(), response.body().get(i).getContent().getRendered()));
 
                 }
                 adapter.notifyDataSetChanged();

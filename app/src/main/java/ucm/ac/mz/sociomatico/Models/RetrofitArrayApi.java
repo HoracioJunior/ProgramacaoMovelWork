@@ -15,8 +15,8 @@ public interface RetrofitArrayApi {
      @GET
      Call<List<WPPost>> getPostInfo(@Url String url);
 
-     @GET
-     Call<List<Media>> getListCall(@Url String url);
+    // @GET
+    // Call<List<Media>> getListCall(@Url String url);
 
 
 

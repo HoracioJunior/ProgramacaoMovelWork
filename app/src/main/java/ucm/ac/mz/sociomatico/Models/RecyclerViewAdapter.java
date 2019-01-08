@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewStructure;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,6 +24,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -68,20 +71,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
 
         ( (ImageTypeViewHolder) holder).title.setText( object.title );
         ( (ImageTypeViewHolder) holder).subtitle.setText( object.subtitle );
+        Picasso.get().load(dataset.get(position).Image).into(( (ImageTypeViewHolder) holder).imageView);
 
         ( (ImageTypeViewHolder) holder).title.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
               Intent intent = new Intent(mContext, Detalhes.class);
 
-
-
-               intent.putExtra("itemPosition", position);
-               intent.putExtra("titulo", (categorias.getList().get(position).getTitle().getRendered().toString()));
-                intent.putExtra("conteudo", (categorias.getList().get(position).getContent().getRendered()));
-
-
-
+                intent.putExtra("itemPosition", position);
+                intent.putExtra("titulo", ((ImageTypeViewHolder) holder).title.getText());
+                intent.putExtra("conteudo", dataset.get(position).content);
+                intent.putExtra("imagem", dataset.get(position).Image);
                mContext.startActivity(intent);
             }
         });
@@ -101,8 +101,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
             @Override
             public void onClick(View v) {
               Intent intent = new Intent(mContext, Detalhes.class);
-              intent.putExtra("itemPosition", position);
-              intent.putExtra("titulo", (categorias.getList().get(position).getTitle().getRendered().toString()));
+                intent.putExtra("itemPosition", position);
+                intent.putExtra("titulo", ((ImageTypeViewHolder) holder).title.getText());
+                intent.putExtra("conteudo", dataset.get(position).content);
+                intent.putExtra("imagem", dataset.get(position).Image);
 
               mContext.startActivity(intent);
             }

@@ -42,14 +42,6 @@ public class Detalhes extends AppCompatActivity {
         String imagem = i.getExtras().get("imagem").toString();
 
 
-        LinkIMG im = new LinkIMG("n");
-
-       
-
-       for(int j=0;j<200;j++){
-
-           Log.e("Olha a imagem", imagem);
-       }
 
 
 
@@ -57,7 +49,12 @@ public class Detalhes extends AppCompatActivity {
 
 
 
-       Picasso.get().load("http://www.sociomatico.com/wp-content/uploads/2018/01/kwanza-notas.jpg").into(img);
+
+
+
+
+
+       Picasso.get().load(imagem).into(img);
 
 
 
